@@ -17,3 +17,49 @@ def find_upper_lower(s):
 #5
 def match_a_any_b(s):
     return bool(re.fullmatch(r'a.*b', s))
+
+#6
+import re
+
+text = "Hello, how are you? I am fine. Thank you."
+result = re.sub(r'[ ,.]', ':', text)
+print(result)
+
+#7
+def snake_to_camel(s):
+    words = s.split('_')
+    return words[0] + ''.join(word.capitalize() for word in words[1:])
+
+snake_str = "hello_world_example"
+camel_str = snake_to_camel(snake_str)
+print(camel_str)
+
+#8
+import re
+
+text = "SplitAtUpperCaseLetters"
+result = re.findall(r'[A-Z][a-z]*', text)
+print(result)
+
+
+#9
+import re
+
+def insert_spaces(s):
+    return re.sub(r'([A-Z])', r' \1', s).strip()
+
+text = "InsertSpacesBetweenWords"
+result = insert_spaces(text)
+print(result)
+
+#10
+import re
+
+def camel_to_snake(s):
+    return re.sub(r'(?<!^)([A-Z])', r'_\1', s).lower()
+
+camel_str = "CamelCaseToSnake"
+snake_str = camel_to_snake(camel_str)
+print(snake_str)
+
+
