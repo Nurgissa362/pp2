@@ -131,7 +131,7 @@ import os
 import string
 import shutil
 
-# Task 6: Generate 26 text files named A.txt to Z.txt
+#6: Generate 26 text files named A.txt to Z.txt
 def generate_text_files():
     for letter in string.ascii_uppercase:
         filename = f"{letter}.txt"
@@ -143,7 +143,7 @@ generate_text_files()
 # Example:  
 print(os.listdir())
 
-# Task 7: Copy contents of one file to another
+#7: Copy contents of one file to another
 def copy_file(src, dest):
     if os.path.exists(src) and os.path.isfile(src):
         shutil.copy(src, dest)
@@ -153,7 +153,7 @@ copy_file("A.txt", "Copied_A.txt")
 # Example: 
 print(os.path.exists("Copied_A.txt"))
 
-# Task 8: Delete a file by specified path after checking access
+#8: Delete a file by specified path after checking access
 def delete_file(filepath):
     if os.path.exists(filepath) and os.path.isfile(filepath):
         if os.access(filepath, os.W_OK):
