@@ -1,133 +1,149 @@
-#4th lab
-
-
-
 #date
 #1
-from datetime import datetime, timedelta
+'''
+from datetime import date , timedelta
 
-current_date = datetime.now()
-new_date = current_date - timedelta(days=5)
-print(new_date.date())
-
-
-
-
+current_date = date.today()
+five_days_ago = current_date - timedelta(days=5)
+print(current_date)
+print (five_days_ago)
+'''
 #2
-from datetime import datetime, timedelta
+'''
+from datetime import date,timedelta
+todays_day = date.today()
+yesterdays_day = date.today()
+tomorrows_day = date.today()
 
-today = datetime.now().date()
-yesterday = today - timedelta(days=1)
-tomorrow = today + timedelta(days=1)
-
-print("Yesterday:", yesterday)
-print("Today:", today)
-print("Tomorrow:", tomorrow)
-
-
+print(yesterdays_day - timedelta(days=1))
+print(todays_day)
+print(tomorrows_day + timedelta(days=1))
+'''
 
 #3
+'''
 from datetime import datetime
 
-date1 = datetime(2024, 2, 10, 12, 0, 0)
-date2 = datetime(2024, 2, 12, 14, 30, 0)
+current_datetime = datetime.now()
+clean_datetime = current_datetime.replace(microsecond=0)
 
-difference = (date2 - date1).total_seconds()
-print(difference)
+print(clean_datetime)
+'''
+4
 
-
-#4
 from datetime import datetime
 
-date1 = datetime(2024, 2, 10, 12, 0, 0)
-date2 = datetime(2024, 2, 12, 14, 30, 0)
-
-difference = (date2 - date1).total_seconds()
-print(difference)
+date1_str = input("Enter the first date : ")
+date2_str = input("Enter the second date : ")
 
 
+date1 = datetime.strptime(date1_str, "%Y-%m-%d %H:%M:%S")
+date2 = datetime.strptime(date2_str, "%Y-%m-%d %H:%M:%S")
 
+
+time_difference = abs((date2 - date1).total_seconds()) 
+
+
+print(f"Difference between the two dates in seconds: {time_difference:.0f}")
 
 
 #generators
-#1
-def generate_squares(N):
-    for i in range(N + 1):
-        yield i ** 2
+#1 
+'''
+def square_generator(N):
+    for num in range (N+1):
+        yield num **2
 
-for num in generate_squares(5):
+n = int(input ("Enter a number N: "))
+
+for num in square_generator(n):
     print(num)
-
-
+'''
 #2
+'''
 def even_numbers(n):
-    for i in range(0, n + 1, 2):
-        yield i
+    for  num in range(n+1):
+        if(num%2==0):
+            yield num
 
-n = int(input("Enter n: "))
-print(",".join(map(str, even_numbers(n))))
+n = int (input("Enter a number n: "))
 
-
-
-
+print(",".join(str(num) for num in even_numbers(n)))
+'''
 #3
-def divisible_by_3_and_4(n):
-    for i in range(n + 1):
-        if i % 3 == 0 and i % 4 == 0:
-            yield i
+'''
+def gen(n):
+    for num in range (n+1):
+        if num%3 == 0 and num%4 == 0:
+            yield num
 
-for num in divisible_by_3_and_4(50):
+n = int(input ("Enter a number N: "))
+
+for num in gen(n):
     print(num)
-
-
-
+'''
 #4
+'''
+def square_generator(a,b):
+    for num in range (a,b+1):
+        yield num **2
 
-def squares(a, b):
-    for i in range(a, b + 1):
-        yield i ** 2
+a = int(input ("Enter a number a: "))
+b = int(input ("Enter a number b: "))
 
-for num in squares(3, 7):
+for num in square_generator(a,b):
     print(num)
-
+'''
 #5
-def countdown(n):
-    for i in range(n, -1, -1):
-        yield i
+'''
+def gen(n):
+    for num in range(n,-1,-1):
+        yield num
 
+num = int (input ("Enter a num: "))
 
-for num in countdown(5):
-    print(num)
-
+for n in gen(num):
+    print(n)
+'''
 
 
 #math
 #1
+'''
 import math
+value = int(input("Enter  degree: "))
 
-def degree_to_radian(degree):
-    return round(degree * (math.pi / 180), 6)
+converted_value = (value * math.pi)/180
 
-print(degree_to_radian(15)) 
-
-
+print(f"Radians: {converted_value:.6f}")
+'''
 #2
-def trapezoid_area(height, base1, base2):
-    return ((base1 + base2) * height) / 2
+'''
+height = int(input ("Enter height: "))
+base1 = int(input ("Enter 1 base: "))
+base2 = int(input ("Enter 2 base: "))
 
-print(trapezoid_area(5, 5, 6))  
-
-
- #3
+area = ((base1+base2)/2)*height
+print(f"Area_Of_Trapezoid: {area}")
+'''
+#3
+'''
 import math
 
-def polygon_area(sides, length):
-    return (sides * (length ** 2)) / (4 * math.tan(math.pi / sides))
+n = int(input("Input number of sides: "))
+s = float(input("Input the length of a side: "))
 
-print(polygon_area(4, 25)) 
+if n == 4:  
+    area = s ** 2
+else:
+    area = (n * s ** 2) / (4 * math.tan(math.pi / n))
 
-
+print(f"The area of the polygon is: {area}")
+'''
 #4
-def parallelogram_area(base, height):
-    return base * height
-print(parallelogram_area(5, 6))  
+'''
+base = float(input ("Enter base: "))
+length = float(input ("Enter length of side: "))
+area = base * length
+print (f"Area of the parrallelogram: {area}")
+'''
