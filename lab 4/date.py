@@ -1,15 +1,15 @@
 
 #1
-'''
+
 from datetime import date , timedelta
 
 current_date = date.today()
 five_days_ago = current_date - timedelta(days=5)
 print(current_date)
 print (five_days_ago)
-'''
+
 #2
-'''
+
 from datetime import date,timedelta
 todays_day = date.today()
 yesterdays_day = date.today()
@@ -18,17 +18,17 @@ tomorrows_day = date.today()
 print(yesterdays_day - timedelta(days=1))
 print(todays_day)
 print(tomorrows_day + timedelta(days=1))
-'''
+
 
 #3
-'''
+
 from datetime import datetime
 
 current_datetime = datetime.now()
 clean_datetime = current_datetime.replace(microsecond=0)
 
 print(clean_datetime)
-'''
+
 
 #4
 
