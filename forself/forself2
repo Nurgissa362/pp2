@@ -1,0 +1,13 @@
+Работа с изображениями: pygame.image.load(), pygame.transform.scale(), pygame.Surface
+
+Музыка и звуки: pygame.mixer.init(), pygame.mixer.Sound()
+
+Геометрическое рисование: pygame.draw.rect(), pygame.draw.circle(), pygame.draw.line()
+
+Таймер: pygame.time.Clock(), pygame.time.set_timer()
+
+Текст и шрифты: pygame.font.Font(), pygame.font.SysFont()
+
+Обработка ввода: pygame.KEYDOWN, pygame.KEYUP, pygame.mouse.get_pos()
+
+Централизованная логика сцен: Можно реализовать через классы и pygame.event.get()
